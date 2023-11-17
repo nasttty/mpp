@@ -12,8 +12,8 @@ end
 def save (parse)
   CSV.open("hospital.csv", 'w') do |element|
 
-    parse.each_with_index do |hospital, index|
-      element << [index + 1, hospital.text.strip]
+    parse.each do |hospital|
+      element << [hospital.text.strip]
     end
 
   end
